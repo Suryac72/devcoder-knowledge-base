@@ -6,11 +6,6 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   output: 'export',
-  basePath: '/devcoder-knowledge-base',
-  assetPrefix: '/devcoder-knowledge-base/',
-  images: {
-    unoptimized: true,
-  },
 };
 
 export default withMDX(config);
