@@ -1,6 +1,9 @@
 import { source } from "@/lib/source";
 import { createSearchAPI } from "fumadocs-core/search/server";
 
+// Make this route static so Next.js can include it during `output: 'export'` builds
+export const dynamic = "force-static";
+
 export const { GET } = createSearchAPI("advanced", {
   language: "english",
   indexes: source.getPages().map((page) => ({
