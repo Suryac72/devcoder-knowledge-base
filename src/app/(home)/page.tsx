@@ -1,11 +1,33 @@
 import Link from "next/link";
-
+import Image from "next/image";
+import Devcoder from './assets/Devcoder.png';
 export default function HomePage() {
   return (
     <main>
       {/* ================= HERO ================= */}
       <section className="relative overflow-hidden border-b bg-gradient-to-b from-background to-muted/30">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center">
+          <div className="mb-6 flex justify-center">
+            <div className="block dark:hidden">
+              <Image
+                src={Devcoder}
+                alt="Devcoder.io"
+                width={240}
+                height={120}
+                className="mx-auto h-auto w-auto rounded-full"
+              />
+            </div>
+
+            <div className="hidden dark:block">
+              <Image
+                src={Devcoder}
+                alt="Devcoder.io (dark)"
+                width={240}
+                height={120}
+                className="mx-auto h-auto w-auto filter invert rounded-full"
+              />
+            </div>
+          </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             Devcoder Knowledge Base
           </h1>
