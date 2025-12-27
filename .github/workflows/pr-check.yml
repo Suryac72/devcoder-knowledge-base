@@ -52,10 +52,11 @@ jobs:
         run: npm run build
         id: build
 
-      - name: Check markdown linting issues
+      - name: Check build output
         run: |
-          echo "## 📋 Markdown Linting Status" >> $GITHUB_STEP_SUMMARY
-          if [ -f build/index.html ]; then
+          echo "## 📋 Build Output Status" >> $GITHUB_STEP_SUMMARY
+          # Support Next.js build ('.next') or static export ('out') or legacy 'build' folder.
+          if [ -d .next ] || [ -d out ] || [ -f build/index.html ]; then
             echo "✅ Build succeeded - No critical build errors" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ Build failed - Check the build output above" >> $GITHUB_STEP_SUMMARY
